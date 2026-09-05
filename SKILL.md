@@ -1,11 +1,11 @@
 ---
-name: skill-navigator
+name: cn-skill-navigator
 description: Help choose the right Codex skill from local installed skills or, when local coverage is missing, search GitHub and skills.sh for suitable skills. Use when the user asks which skill to use, wants a Chinese explanation of skills, or wants to discover skills for a task.
 metadata:
   short-description: Choose local or external skills
 ---
 
-# Skill Navigator
+# CN Skill Navigator
 
 Use this skill to turn a user's plain-language task, including Chinese requests, into practical skill recommendations.
 
