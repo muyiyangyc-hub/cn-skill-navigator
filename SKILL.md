@@ -14,7 +14,10 @@ Use this skill to turn a user's plain-language task, including Chinese requests,
 Read only the reference files that fit the current request:
 
 - For local installed skill explanations, Chinese categories, or overlap decisions, read [references/local-skill-categories.zh.md](references/local-skill-categories.zh.md).
+- For quick Chinese task-to-skill routing, read [references/decision-tree.zh.md](references/decision-tree.zh.md).
+- For concrete Chinese examples or response phrasing, read [references/examples.zh.md](references/examples.zh.md).
 - For GitHub, skills.sh, or external skill discovery, read [references/external-search-checklist.md](references/external-search-checklist.md).
+- For publishing or pre-release checks for a skill, read [references/publishing-checklist.md](references/publishing-checklist.md).
 
 ## Core Behavior
 
@@ -48,6 +51,8 @@ When names are English and the user is Chinese-speaking, translate the purpose i
 
 Use the local category reference when the user asks broad questions such as "我该用哪个 skill", "帮我区分 skill", or "这些 skill 都是干什么的".
 
+Use the decision tree when the user gives a short task description and expects a direct recommendation.
+
 ## External Search
 
 Use external search when:
@@ -76,6 +81,8 @@ If these signals cannot be verified, say so plainly and mark the recommendation 
 
 Use the external search checklist before recommending a new skill from GitHub or skills.sh.
 
+Use the publishing checklist when the user wants to publish, share, rename, package, or prepare a skill repository.
+
 ## Recommendation Format
 
 Keep the output concise. A good response usually includes:
@@ -93,6 +100,8 @@ Example:
 这个任务本地最接近的是 `frontend-design`，适合直接做页面和组件。
 如果你想找更专门的 React 性能 skill，我可以再去 GitHub/skills.sh 搜索并按质量筛选。
 ```
+
+Use the examples reference when the user's phrasing is close to an example. Adapt the answer to the user's actual task instead of copying examples mechanically.
 
 ## Boundaries
 
