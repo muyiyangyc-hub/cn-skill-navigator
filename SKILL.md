@@ -9,6 +9,13 @@ metadata:
 
 Use this skill to turn a user's plain-language task, including Chinese requests, into practical skill recommendations.
 
+## Reference Routing
+
+Read only the reference files that fit the current request:
+
+- For local installed skill explanations, Chinese categories, or overlap decisions, read [references/local-skill-categories.zh.md](references/local-skill-categories.zh.md).
+- For GitHub, skills.sh, or external skill discovery, read [references/external-search-checklist.md](references/external-search-checklist.md).
+
 ## Core Behavior
 
 When the user asks which skill to use, how to distinguish installed skills, or whether a skill exists for a task:
@@ -18,6 +25,7 @@ When the user asks which skill to use, how to distinguish installed skills, or w
 3. If local skills are insufficient, overlapping, or absent, search externally through GitHub and skills.sh when network access is available.
 4. Recommend a small set of choices with clear boundaries, not a long catalog.
 5. Explain recommendations in the user's language.
+6. State whether the answer is based on local inspection, external search, or both.
 
 Do not install a skill unless the user explicitly asks to install it.
 
@@ -37,6 +45,8 @@ For each relevant local skill, identify:
 - whether it overlaps with another installed skill
 
 When names are English and the user is Chinese-speaking, translate the purpose into natural Chinese while preserving the exact skill name.
+
+Use the local category reference when the user asks broad questions such as "我该用哪个 skill", "帮我区分 skill", or "这些 skill 都是干什么的".
 
 ## External Search
 
@@ -64,11 +74,15 @@ Before recommending an external skill, check quality signals when available:
 
 If these signals cannot be verified, say so plainly and mark the recommendation as tentative.
 
+Use the external search checklist before recommending a new skill from GitHub or skills.sh.
+
 ## Recommendation Format
 
 Keep the output concise. A good response usually includes:
 
 - Best local match, if any
+- Why it fits the request
+- Important overlap or pairing advice
 - External options, if local coverage is weak or the user requested search
 - Exact install command only after verifying a package name
 - One practical next step
@@ -86,3 +100,4 @@ Example:
 - Do not recommend external skills solely from a name match.
 - Do not flood the user with every possible skill.
 - Do not translate or rename the actual skill folder names.
+- Do not run network searches when the user only needs a clear local recommendation and local coverage is strong.
